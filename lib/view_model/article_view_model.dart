@@ -1,6 +1,6 @@
 import "package:flutter/foundation.dart";
 
-import "package:repository/model/articles.dart";
+import "package:repository/model/article.dart";
 import "package:repository/repository/article_repository.dart";
 
 class ArticleViewModel extends ChangeNotifier {
@@ -9,9 +9,9 @@ class ArticleViewModel extends ChangeNotifier {
 
   final ArticleRepository _repository;
 
-  Articles? _articles;
+  Article? _articles;
 
-  Articles? get articles => _articles;
+  Article? get articles => _articles;
 
   Future<void> getArticles() async {
     return _repository
