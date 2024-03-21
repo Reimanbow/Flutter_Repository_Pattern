@@ -10,7 +10,7 @@ abstract class ArticleDataSource {
   factory ArticleDataSource(Dio dio, {String baseUrl}) = _ArticleDataSource;
 
   @GET("/items")
-  Future<Article> getArticles(
+  Future<dynamic> getArticles(
     @Header("Authorization") String authorization,
     @Query("page") int? page,
     @Query("per_page") int? perPage,

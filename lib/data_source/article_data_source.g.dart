@@ -21,7 +21,7 @@ class _ArticleDataSource implements ArticleDataSource {
   String? baseUrl;
 
   @override
-  Future<Article> getArticles(
+  Future<dynamic> getArticles(
     String authorization,
     int? page,
     int? perPage,
@@ -35,24 +35,23 @@ class _ArticleDataSource implements ArticleDataSource {
     final _headers = <String, dynamic>{r'Authorization': authorization};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Article>(Options(
+    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/items',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = Article.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          '/items',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final value = _result.data;
     return value;
   }
 
