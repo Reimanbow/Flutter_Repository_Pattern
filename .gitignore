@@ -54,3 +54,5 @@ test
 .metadata
 analysis_options.yaml
 pubspec.lock
+
+lib/config/config.dart
