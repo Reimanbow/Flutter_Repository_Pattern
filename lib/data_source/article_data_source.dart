@@ -1,7 +1,7 @@
 import "package:dio/dio.dart";
 import "package:retrofit/retrofit.dart";
 
-import "package:repository/model/articles.dart";
+import "package:repository/model/article.dart";
 
 part "article_data_source.g.dart";
 
@@ -10,7 +10,9 @@ abstract class ArticleDataSource {
   factory ArticleDataSource(Dio dio, {String baseUrl}) = _ArticleDataSource;
 
   @GET("/items")
-  Future<Articles> getArticles(
+  Future<Article> getArticles(
     @Header("Authorization") String authorization,
+    @Query("page") int? page,
+    @Query("per_page") int? perPage,
   );
 }

@@ -1,5 +1,5 @@
-import "package:repository/model/articles.dart";
+import "package:repository/model/article.dart";
 
 abstract class ArticleRepository {
-  Future<Articles> getArticles();
+  Future<Article> getArticles();
 }
