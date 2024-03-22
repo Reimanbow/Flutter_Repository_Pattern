@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+import "package:repository/view/articles_page.dart";
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -9,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: "Repository",
       theme:
           ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.green)),
-      home: null,
+      home: const ArticlePage(),
     );
   }
 }

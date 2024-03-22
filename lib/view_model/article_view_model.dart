@@ -9,9 +9,9 @@ class ArticleViewModel extends ChangeNotifier {
 
   final ArticleRepository _repository;
 
-  Article? _articles;
+  List<Article>? _articles;
 
-  Article? get articles => _articles;
+  List<Article>? get articles => _articles;
 
   Future<void> getArticles() async {
     return _repository
