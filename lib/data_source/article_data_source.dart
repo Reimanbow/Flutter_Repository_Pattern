@@ -1,8 +1,6 @@
 import "package:dio/dio.dart";
 import "package:retrofit/retrofit.dart";
 
-import "package:repository/model/article.dart";
-
 part "article_data_source.g.dart";
 
 @RestApi(baseUrl: "https://qiita.com/api/v2")
